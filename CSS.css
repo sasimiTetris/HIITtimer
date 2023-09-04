@@ -178,7 +178,7 @@ html::-webkit-scrollbar{
     pointer-events: var(--click);
 }
 .a::before {
-    content:url(/img/fire.png);
+    content:url("img/fire.png");
     display: inline-block;
     position: absolute;
     z-index: 100;
@@ -203,7 +203,7 @@ html::-webkit-scrollbar{
     pointer-events: var(--click);
 }
 .s::before{
-    content:url(/img/clock.png);
+    content:url("img/clock.png");
     display: inline-block;
     position: absolute;
     z-index: 100;
