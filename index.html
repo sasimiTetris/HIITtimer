@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="CSS.css">
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>HIITtimer</title>
+    </head>
+    <body class="ki">
+        <div class="title">
+            <span class="water">HIIT</span><span class="clock">timer</span>
+        </div>
+
+        <div id="time"><text id="timer"><span id="minutes">00</span>:<span id="seconds">00</span>:<span id="millisecond">000</span></text></div>
+
+        <div id="kaisuu">
+            <a id="kazu">0</a>
+        </div>
+        <div class="b"><button id="btn" class="on" >start</button><button id="clear">reset</button></div>
+        <div class="border"></div>
+        <div id="shinkou">
+            <img id="ピクトグラム" class="class" src="img/pikuto-s.png">
+            <div class="グラフ" id="グラフ">
+                <div id="グラフ1" class="charts"></div>
+                <div id="グラフ2" class="charts"></div>
+                <div id="グラフ3" class="charts"></div>
+                <div id="グラフ4" class="charts"></div>
+                <div        class="charts goal"></div>
+            </div>
+            <div class="残り"><span id="残り" class="sasimi">残り</span><span id="残り分"></span><span id="残り秒">10秒</span></div>
+
+
+        <div class="border"></div>
+
+        <div id="anten" class="antenmae"></div>
+        <div id="helpwindow">
+            <span id="help1" class="helpclass"><p>HIITは短時間の高強度の運動と、短時</p><p>間の低強度の運動を繰り返すインター</p><p>バルトレーニングの一種です。通常の</p><p>トレーニングよりも時短でありながら</p><p>、ほぼ同様の効果が得られるトレーニングです。</p></span>
+            <span id="help2" class="helpclass"><p>上の数字は経過時間を表示してい</p><p>ます。startを押すと開始または再</p><p>開し、stopを押すと停止し、reset</p><p>を押すと数字がリセットされます。</p></span>
+            <span id="help3" class="helpclass"><p>下の数字はエクササイズの回数（時間ごとの</p><p>※デフォルトは１秒ごと）を表示しています。</p><p>セットの休憩時間になると緑色に変わり、</p><p>セットの休憩時間（エクササイズの回数と同</p><p>じ）を表示します。</p></span>
+            <span id="help4" class="helpclass"><p>ボタンはエクササイズの経過時間と回数の</p><p>表示の開始、停止、リセットを行います。</p><p>startは開始させ、stopは停止させ、</p><p>resetはリセットをします</p></span>
+            <span id="help5" class="helpclass"><p>SETは、それぞれ、SET1、SET2、SET3、SET4に分かれ</p><p>ていて、タイムの経過中の回数の表示を変更できます。</p><p>SETはSET1,SET2,SET3,SET4の順に実行(表示)します。</p><p>SETが分かれているので途中で別の運動をしたい時などに</p><p>も利用できます。セットでは各SETごとの行う回数を設定</p><p>できます。運動時間では運動する時間を設定できます。</p><p>休憩時間では運動時間と同様に休憩する時間を設定でき</p><p>ます。回数/sでは秒ごとの回数のカウントを設定できます。</p></span>
+        </div>
+        <div>     
+            <a id="hatena">?</a>
+            <select id="ヘルプ">
+                <option value="1">ヘルプ</option><option value="2">HIIT</option><option value="3">上の数字</option>
+                <option value="4">下の数字</option><option value="5">ボタン</option><option value="6">SET</option>
+            </select>
+            <select id="モード1" class="frog">
+                <option value="0">SET1</option><option value="1">通常</option><option value="2">奇数</option>
+                <option value="3">偶数</option><option value="4">2+</option><option value="5">2.5+</option>
+            </select><select id="モード2" class="tokei">
+                <option value="0">SET2</option><option value="1">通常</option><option value="2">奇数</option>
+                <option value="3">偶数</option><option value="4">2+</option><option value="5">2.5+</option>
+            </select><select id="モード3" class="tokei">
+                <option value="0">SET3</option><option value="1">通常</option><option value="2">奇数</option>
+                <option value="3">偶数</option><option value="4">2+</option><option value="5">2.5+</option>
+            </select><select id="モード4" class="snake">
+                <option value="0">SET4</option><option value="1">通常</option><option value="2">奇数</option>
+                <option value="3">偶数</option><option value="4">2+</option><option value="5">2.5+</option>
+            </select>
+            <div class="a">
+                <select id="バージョン" class="deer">
+                    <option value="1">  HIIT  難易度別セット</option><option value="2">4分間(Normal)</option><option value="3">7分間(SemiHard)</option>
+                    <option value="4">7分間⤴(Normal+)</option><option value="5">7分間休憩+(Normal)</option><option value="6">7分間+(Hard)</option>
+                    <option value="7">6分半(Hard)</option><option value="8">4分間低負荷(Easy)</option><option value="9">25分間 (VeryHard)</option>
+                </select> 
+            </div>
+        <a class="sp"><div class="s"></div></a>
+        <div class="saba">カスタムモード : <span id="カスタムモード">OFF</span></div>
+    </div>
+    <div class="ging">
+    <div class="te" name="SET1">
+        <text class="setshita">SET1</text>
+        <div class="tree"> 
+            <text>セット数</text>
+            <select id="セット" class="gear">
+                <option value="1">1</option>  <option value="2">2</option>  <option value="3">3</option>
+                <option value="4">4</option>  <option value="5">5</option>  <option value="6">6</option>
+                <option value="7">7</option>  <option value="8">8</option>  <option value="9">9</option>
+                <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                <option value="13">13</option><option value="14">14</option><option value="15">15</option>
+                <option value="16">16</option><option value="17">17</option><option value="18">18</option>
+                <option value="19">19</option><option value="20">20</option><option value="21">21</option>
+                <option value="22">22</option><option value="23">23</option><option value="24">24</option> 
+                <option value="25">25</option><option value="26">26</option><option value="27">27</option>
+                <option value="28">28</option><option value="29">29</option><option value="30">30</option>
+                <option value="31">31</option><option value="32">32</option><option value="33">33</option>
+            </select>
+            <text>運動時間</text>
+            <select id="運動" class="gear">
+                <option class="none OP4"value="0.2">2秒</option><option class="none OP5"value="0.25">2.5秒</option><option class="none OP2"value="0.3">3秒</option>
+                <option class="none OP3 OP4"value="0.4">4秒</option><option class="OP2none OP3none OP4none" value="0.5">5秒</option><option class="none OP2 OP4"value="0.6">6秒</option>
+                <option class="none OP5"value="0.75">7.5秒</option><option class="none OP3 OP4"value="0.8">8秒</option><option class="none OP2"value="0.9">9秒</option>
+                <option class="OP2none OP3none" value="1">10秒</option><option class="none OP2 OP4"value="1.2">12秒</option><option class="none OP5"value="1.25">12.5秒</option>
+                <option class="OP3none OP4none"value="1.5">15秒</option><option class="none OP5"value="1.75">17.5秒</option><option class="none OP2 OP4"value="1.8">18秒</option>
+                <option class="OP2none" value="2">20秒</option><option class="none OP2"value="2.1">21秒</option><option class="none OP5"value="2.25">22.5秒</option>
+                <option class="none OP2 OP3 OP4"value="2.4">24秒</option><option class="OP2none OP3none OP4none"value="2.5">25秒</option><option class="none OP2"value="2.7">27秒</option>
+                <option class="none OP5"value="2.75">27.5秒</option><option class="OP3none"value="3">30秒</option><option class="none OP5"value="3.25">32.5秒</option>
+                <option class="OP2none OP3none OP4none"value="3.5">35秒</option><option class="none OP5"value="3.75">37.5秒</option><option class="OP2none"value="4">40秒</option>
+                <option class="OP3none OP4none"value="4.5">45秒</option><option class="OP2none OP3none"value="5">50秒</option><option class="OP2none OP3none OP4none"value="5.5">55秒</option>
+                <option value="6">1分</option><option class="OP3none"value="7">1分半</option><option value="8">2分</option><option class="OP3none"value="9">2分半</option>
+                <option value="10">3分</option><option class="OP3none"value="11">3分半</option><option value="12">4分</option>
+            </select>
+            <text>休憩時間</text>
+            <select id="休憩" class="gear">
+                <option class="none OP4"value="0.2">2秒</option><option class="none OP5"value="0.25">2.5秒</option><option class="none OP2"value="0.3">3秒</option>
+                <option class="none OP3 OP4"value="0.4">4秒</option><option class="OP2none OP3none OP4none" value="0.5">5秒</option><option class="none OP2 OP4"value="0.6">6秒</option>
+                <option class="none OP5"value="0.75">7.5秒</option><option class="none OP3 OP4"value="0.8">8秒</option><option class="none OP2"value="0.9">9秒</option>
+                <option class="OP2none OP3none" value="1">10秒</option><option class="none OP2 OP4"value="1.2">12秒</option><option class="none OP5"value="1.25">12.5秒</option>
+                <option class="OP3none OP4none"value="1.5">15秒</option><option class="none OP5"value="1.75">17.5秒</option><option class="none OP2 OP4"value="1.8">18秒</option>
+                <option class="OP2none" value="2">20秒</option><option class="none OP2"value="2.1">21秒</option><option class="none OP5"value="2.25">22.5秒</option>
+                <option class="none OP2 OP3 OP4"value="2.4">24秒</option><option class="OP2none OP3none OP4none"value="2.5">25秒</option><option class="none OP2"value="2.7">27秒</option>
+                <option class="none OP5"value="2.75">27.5秒</option><option class="OP3none"value="3">30秒</option><option class="none OP5"value="3.25">32.5秒</option>
+                <option class="OP2none OP3none OP4none"value="3.5">35秒</option><option class="none OP5"value="3.75">37.5秒</option><option class="OP2none"value="4">40秒</option>
+                <option class="OP3none OP4none"value="4.5">45秒</option><option class="OP2none OP3none"value="5">50秒</option><option class="OP2none OP3none OP4none"value="5.5">55秒</option>
+                <option value="6">1分</option><option class="OP3none"value="7">1分半</option><option value="8">2分</option><option class="OP3none"value="9">2分半</option>
+                <option value="10">3分</option><option class="OP3none"value="11">3分半</option><option value="12">4分</option>
+            </select>
+            <text>回数/s</text>
+            <select id="回数時間" class="gear">
+                <option value="1" class="OP5none">1秒</option><option value="1.5" class="none OP2">1.5秒</option><option value="2" class="none OP3 OP4">2秒</option><option value="2.5" class="OP2none OP3none OP4none">2.5秒</option><option value="3" class="none OP2">3秒</option><option value="4" class="none OP3">4秒</option><option value="5" class="OP2none OP3none OP4none OP5none">5秒</option>
+            </select>
+        </div>
+    </div>
+    <div class="te" name="SET2">
+        <text id="class" class="setshita">SET2</text>
+        <div id="class"> 
+            <text>セット数</text>
+            <select id="セット2" class="gear">
+                <option value="0">0</option><option value="1">1</option><option value="2">2</option>
+                <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+                <option value="9">9</option><option value="10">10</option><option value="11">11</option>
+                <option value="12">12</option><option value="13">13</option><option value="14">14</option>
+                <option value="15">15</option><option value="16">16</option><option value="17">17</option>
+                <option value="18">18</option><option value="19">19</option><option value="20">20</option>
+                <option value="21">21</option><option value="22">22</option><option value="23">23</option>
+                <option value="24">24</option><option value="25">25</option><option value="26">26</option>
+                <option value="27">27</option><option value="28">28</option><option value="29">29</option>
+                <option value="30">30</option><option value="31">31</option><option value="32">32</option>
+            </select>
+            </select>
+            <text>運動時間</text>
+            <select id="運動2" class="gear">
+                <option class="none OP4"value="0.2">2秒</option><option class="none OP5"value="0.25">2.5秒</option><option class="none OP2"value="0.3">3秒</option>
+                <option class="none OP3 OP4"value="0.4">4秒</option><option class="OP2none OP3none OP4none" value="0.5">5秒</option><option class="none OP2 OP4"value="0.6">6秒</option>
+                <option class="none OP5"value="0.75">7.5秒</option><option class="none OP3 OP4"value="0.8">8秒</option><option class="none OP2"value="0.9">9秒</option>
+                <option class="OP2none OP3none" value="1">10秒</option><option class="none OP2 OP4"value="1.2">12秒</option><option class="none OP5"value="1.25">12.5秒</option>
+                <option class="OP3none OP4none"value="1.5">15秒</option><option class="none OP5"value="1.75">17.5秒</option><option class="none OP2 OP4"value="1.8">18秒</option>
+                <option class="OP2none" value="2">20秒</option><option class="none OP2"value="2.1">21秒</option><option class="none OP5"value="2.25">22.5秒</option>
+                <option class="none OP2 OP3 OP4"value="2.4">24秒</option><option class="OP2none OP3none OP4none"value="2.5">25秒</option><option class="none OP2"value="2.7">27秒</option>
+                <option class="none OP5"value="2.75">27.5秒</option><option class="OP3none"value="3">30秒</option><option class="none OP5"value="3.25">32.5秒</option>
+                <option class="OP2none OP3none OP4none"value="3.5">35秒</option><option class="none OP5"value="3.75">37.5秒</option><option class="OP2none"value="4">40秒</option>
+                <option class="OP3none OP4none"value="4.5">45秒</option><option class="OP2none OP3none"value="5">50秒</option><option class="OP2none OP3none OP4none"value="5.5">55秒</option>
+                <option value="6">1分</option><option class="OP3none"value="7">1分半</option><option value="8">2分</option><option class="OP3none"value="9">2分半</option>
+                <option value="10">3分</option><option class="OP3none"value="11">3分半</option><option value="12">4分</option>
+            </select>
+            <text>休憩時間</text>
+            <select id="休憩2" class="gear">
+                <option class="none OP4"value="0.2">2秒</option><option class="none OP5"value="0.25">2.5秒</option><option class="none OP2"value="0.3">3秒</option>
+                <option class="none OP3 OP4"value="0.4">4秒</option><option class="OP2none OP3none OP4none" value="0.5">5秒</option><option class="none OP2 OP4"value="0.6">6秒</option>
+                <option class="none OP5"value="0.75">7.5秒</option><option class="none OP3 OP4"value="0.8">8秒</option><option class="none OP2"value="0.9">9秒</option>
+                <option class="OP2none OP3none" value="1">10秒</option><option class="none OP2 OP4"value="1.2">12秒</option><option class="none OP5"value="1.25">12.5秒</option>
+                <option class="OP3none OP4none"value="1.5">15秒</option><option class="none OP5"value="1.75">17.5秒</option><option class="none OP2 OP4"value="1.8">18秒</option>
+                <option class="OP2none" value="2">20秒</option><option class="none OP2"value="2.1">21秒</option><option class="none OP5"value="2.25">22.5秒</option>
+                <option class="none OP2 OP3 OP4"value="2.4">24秒</option><option class="OP2none OP3none OP4none"value="2.5">25秒</option><option class="none OP2"value="2.7">27秒</option>
+                <option class="none OP5"value="2.75">27.5秒</option><option class="OP3none"value="3">30秒</option><option class="none OP5"value="3.25">32.5秒</option>
+                <option class="OP2none OP3none OP4none"value="3.5">35秒</option><option class="none OP5"value="3.75">37.5秒</option><option class="OP2none"value="4">40秒</option>
+                <option class="OP3none OP4none"value="4.5">45秒</option><option class="OP2none OP3none"value="5">50秒</option><option class="OP2none OP3none OP4none"value="5.5">55秒</option>
+                <option value="6">1分</option><option class="OP3none"value="7">1分半</option><option value="8">2分</option><option class="OP3none"value="9">2分半</option>
+                <option value="10">3分</option><option class="OP3none"value="11">3分半</option><option value="12">4分</option>
+            </select>
+            <text>回数/s</text>
+            <select id="回数時間2" class="gear">
+                <option value="1" class="OP5none">1秒</option><option value="1.5" class="none OP2">1.5秒</option><option value="2" class="none OP3 OP4">2秒</option><option value="2.5" class="OP2none OP3none OP4none">2.5秒</option><option value="3" class="none OP2">3秒</option><option value="4" class="none OP3">4秒</option><option value="5" class="OP2none OP3none OP4none OP5none">5秒</option>
+            </select>
+        </div>
+    </div>
+    <div class="te" name="SET3">
+        <text class="setshita" id="class">SET3</text>
+        <div id="class"> 
+            <text>セット数</text>
+            <select id="セット3" class="gear">
+                <option value="0">0</option><option value="1">1</option><option value="2">2</option>
+                <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+                <option value="9">9</option><option value="10">10</option><option value="11">11</option>
+                <option value="12">12</option><option value="13">13</option><option value="14">14</option>
+                <option value="15">15</option><option value="16">16</option><option value="17">17</option>
+                <option value="18">18</option><option value="19">19</option><option value="20">20</option>
+                <option value="21">21</option><option value="22">22</option><option value="23">23</option>
+                <option value="24">24</option><option value="25">25</option><option value="26">26</option>
+                <option value="27">27</option><option value="28">28</option><option value="29">29</option>
+                <option value="30">30</option><option value="31">31</option><option value="32">32</option>
+            </select>
+            <text>運動時間</text>
+            <select id="運動3" class="gear">
+                <option class="none OP4"value="0.2">2秒</option><option class="none OP5"value="0.25">2.5秒</option><option class="none OP2"value="0.3">3秒</option>
+                <option class="none OP3 OP4"value="0.4">4秒</option><option class="OP2none OP3none OP4none" value="0.5">5秒</option><option class="none OP2 OP4"value="0.6">6秒</option>
+                <option class="none OP5"value="0.75">7.5秒</option><option class="none OP3 OP4"value="0.8">8秒</option><option class="none OP2"value="0.9">9秒</option>
+                <option class="OP2none OP3none" value="1">10秒</option><option class="none OP2 OP4"value="1.2">12秒</option><option class="none OP5"value="1.25">12.5秒</option>
+                <option class="OP3none OP4none"value="1.5">15秒</option><option class="none OP5"value="1.75">17.5秒</option><option class="none OP2 OP4"value="1.8">18秒</option>
+                <option class="OP2none" value="2">20秒</option><option class="none OP2"value="2.1">21秒</option><option class="none OP5"value="2.25">22.5秒</option>
+                <option class="none OP2 OP3 OP4"value="2.4">24秒</option><option class="OP2none OP3none OP4none"value="2.5">25秒</option><option class="none OP2"value="2.7">27秒</option>
+                <option class="none OP5"value="2.75">27.5秒</option><option class="OP3none"value="3">30秒</option><option class="none OP5"value="3.25">32.5秒</option>
+                <option class="OP2none OP3none OP4none"value="3.5">35秒</option><option class="none OP5"value="3.75">37.5秒</option><option class="OP2none"value="4">40秒</option>
+                <option class="OP3none OP4none"value="4.5">45秒</option><option class="OP2none OP3none"value="5">50秒</option><option class="OP2none OP3none OP4none"value="5.5">55秒</option>
+                <option value="6">1分</option><option class="OP3none"value="7">1分半</option><option value="8">2分</option><option class="OP3none"value="9">2分半</option>
+                <option value="10">3分</option><option class="OP3none"value="11">3分半</option><option value="12">4分</option>
+            </select>
+            <text>休憩時間</text>
+            <select id="休憩3" class="gear">
+                <option class="none OP4"value="0.2">2秒</option><option class="none OP5"value="0.25">2.5秒</option><option class="none OP2"value="0.3">3秒</option>
+                <option class="none OP3 OP4"value="0.4">4秒</option><option class="OP2none OP3none OP4none" value="0.5">5秒</option><option class="none OP2 OP4"value="0.6">6秒</option>
+                <option class="none OP5"value="0.75">7.5秒</option><option class="none OP3 OP4"value="0.8">8秒</option><option class="none OP2"value="0.9">9秒</option>
+                <option class="OP2none OP3none" value="1">10秒</option><option class="none OP2 OP4"value="1.2">12秒</option><option class="none OP5"value="1.25">12.5秒</option>
+                <option class="OP3none OP4none"value="1.5">15秒</option><option class="none OP5"value="1.75">17.5秒</option><option class="none OP2 OP4"value="1.8">18秒</option>
+                <option class="OP2none" value="2">20秒</option><option class="none OP2"value="2.1">21秒</option><option class="none OP5"value="2.25">22.5秒</option>
+                <option class="none OP2 OP3 OP4"value="2.4">24秒</option><option class="OP2none OP3none OP4none"value="2.5">25秒</option><option class="none OP2"value="2.7">27秒</option>
+                <option class="none OP5"value="2.75">27.5秒</option><option class="OP3none"value="3">30秒</option><option class="none OP5"value="3.25">32.5秒</option>
+                <option class="OP2none OP3none OP4none"value="3.5">35秒</option><option class="none OP5"value="3.75">37.5秒</option><option class="OP2none"value="4">40秒</option>
+                <option class="OP3none OP4none"value="4.5">45秒</option><option class="OP2none OP3none"value="5">50秒</option><option class="OP2none OP3none OP4none"value="5.5">55秒</option>
+                <option value="6">1分</option><option class="OP3none"value="7">1分半</option><option value="8">2分</option><option class="OP3none"value="9">2分半</option>
+                <option value="10">3分</option><option class="OP3none"value="11">3分半</option><option value="12">4分</option>
+            </select>
+            <text>回数/s</text>
+            <select id="回数時間3" class="gear">
+                <option value="1" class="OP5none">1秒</option><option value="1.5" class="none OP2">1.5秒</option><option value="2" class="none OP3 OP4">2秒</option><option value="2.5" class="OP2none OP3none OP4none">2.5秒</option><option value="3" class="none OP2">3秒</option><option value="4" class="none OP3">4秒</option><option value="5" class="OP2none OP3none OP4none OP5none">5秒</option>
+            </select>
+        </div>
+    </div>
+    <div class="te" name="SET4">
+        <text id="class" class="setshita">SET4</text>
+        <div id="class"> 
+            <text>セット数</text>
+            <select id="セット4" class="gear">
+                <option value="0">0</option><option value="1">1</option><option value="2">2</option>
+                <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                <option value="6">6</option><option value="7">7</option> <option value="8">8</option>
+                <option value="9">9</option><option value="10">10</option><option value="11">11</option>
+                <option value="12">12</option><option value="13">13</option><option value="14">14</option>
+                <option value="15">15</option><option value="16">16</option> <option value="17">17</option>
+                <option value="18">18</option> <option value="19">19</option> <option value="20">20</option>
+                <option value="21">21</option><option value="22">22</option><option value="23">23</option>
+                <option value="24">24</option><option value="25">25</option><option value="26">26</option>
+                <option value="27">27</option><option value="28">28</option><option value="29">29</option>
+                <option value="30">30</option><option value="31">31</option><option value="32">32</option>
+            </select>
+            <text>運動時間</text>
+            <select id="運動4" class="gear">
+                <option class="none OP4"value="0.2">2秒</option><option class="none OP5"value="0.25">2.5秒</option><option class="none OP2"value="0.3">3秒</option>
+                <option class="none OP3 OP4"value="0.4">4秒</option><option class="OP2none OP3none OP4none" value="0.5">5秒</option><option class="none OP2 OP4"value="0.6">6秒</option>
+                <option class="none OP5"value="0.75">7.5秒</option><option class="none OP3 OP4"value="0.8">8秒</option><option class="none OP2"value="0.9">9秒</option>
+                <option class="OP2none OP3none" value="1">10秒</option><option class="none OP2 OP4"value="1.2">12秒</option><option class="none OP5"value="1.25">12.5秒</option>
+                <option class="OP3none OP4none"value="1.5">15秒</option><option class="none OP5"value="1.75">17.5秒</option><option class="none OP2 OP4"value="1.8">18秒</option>
+                <option class="OP2none" value="2">20秒</option><option class="none OP2"value="2.1">21秒</option><option class="none OP5"value="2.25">22.5秒</option>
+                <option class="none OP2 OP3 OP4"value="2.4">24秒</option><option class="OP2none OP3none OP4none"value="2.5">25秒</option><option class="none OP2"value="2.7">27秒</option>
+                <option class="none OP5"value="2.75">27.5秒</option><option class="OP3none"value="3">30秒</option><option class="none OP5"value="3.25">32.5秒</option>
+                <option class="OP2none OP3none OP4none"value="3.5">35秒</option><option class="none OP5"value="3.75">37.5秒</option><option class="OP2none"value="4">40秒</option>
+                <option class="OP3none OP4none"value="4.5">45秒</option><option class="OP2none OP3none"value="5">50秒</option><option class="OP2none OP3none OP4none"value="5.5">55秒</option>
+                <option value="6">1分</option><option class="OP3none"value="7">1分半</option><option value="8">2分</option><option class="OP3none"value="9">2分半</option>
+                <option value="10">3分</option><option class="OP3none"value="11">3分半</option><option value="12">4分</option>
+            </select>
+            <text>休憩時間</text>
+            <select id="休憩4" class="gear">
+                <option class="none OP4"value="0.2">2秒</option><option class="none OP5"value="0.25">2.5秒</option><option class="none OP2"value="0.3">3秒</option>
+                <option class="none OP3 OP4"value="0.4">4秒</option><option class="OP2none OP3none OP4none" value="0.5">5秒</option><option class="none OP2 OP4"value="0.6">6秒</option>
+                <option class="none OP5"value="0.75">7.5秒</option><option class="none OP3 OP4"value="0.8">8秒</option><option class="none OP2"value="0.9">9秒</option>
+                <option class="OP2none OP3none" value="1">10秒</option><option class="none OP2 OP4"value="1.2">12秒</option><option class="none OP5"value="1.25">12.5秒</option>
+                <option class="OP3none OP4none"value="1.5">15秒</option><option class="none OP5"value="1.75">17.5秒</option><option class="none OP2 OP4"value="1.8">18秒</option>
+                <option class="OP2none" value="2">20秒</option><option class="none OP2"value="2.1">21秒</option><option class="none OP5"value="2.25">22.5秒</option>
+                <option class="none OP2 OP3 OP4"value="2.4">24秒</option><option class="OP2none OP3none OP4none"value="2.5">25秒</option><option class="none OP2"value="2.7">27秒</option>
+                <option class="none OP5"value="2.75">27.5秒</option><option class="OP3none"value="3">30秒</option><option class="none OP5"value="3.25">32.5秒</option>
+                <option class="OP2none OP3none OP4none"value="3.5">35秒</option><option class="none OP5"value="3.75">37.5秒</option><option class="OP2none"value="4">40秒</option>
+                <option class="OP3none OP4none"value="4.5">45秒</option><option class="OP2none OP3none"value="5">50秒</option><option class="OP2none OP3none OP4none"value="5.5">55秒</option>
+                <option value="6">1分</option><option class="OP3none"value="7">1分半</option><option value="8">2分</option><option class="OP3none"value="9">2分半</option>
+                <option value="10">3分</option><option class="OP3none"value="11">3分半</option><option value="12">4分</option>
+            </select>
+            <text>回数/s</text>
+            <select id="回数時間4" class="gear">
+                <option value="1" class="OP5none">1秒</option><option value="1.5" class="none OP2">1.5秒</option><option value="2" class="none OP3 OP4">2秒</option><option value="2.5" class="OP2none OP3none OP4none">2.5秒</option><option value="3" class="none OP2">3秒</option><option value="4" class="none OP3">4秒</option><option value="5" class="OP2none OP3none OP4none OP5none">5秒</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+        <script src="JavaScript.js"></script>
+        
+    </body>
+</html>

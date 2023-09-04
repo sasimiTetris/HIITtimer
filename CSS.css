@@ -1,0 +1,538 @@
+/* メモ
+:rootはドキュメントを表しているため<html>に適応される、そのため全体に適応される
+:rootを使うことでcssの中で変数のようなものを作れる
+*/
+
+:root{
+    --mordcolor:#ffa763;
+    --mordcolor2:#ff644ce6;
+    --click:auto;
+    --speed:10s;
+    --set1u:0vw;    --set1k:0vw;
+    --set2u:0vw;    --set2k:0vw;
+    --set3u:0vw;    --set3k:0vw;
+    --set4u:0vw;    --set4k:0vw;
+    --animestop:running;
+    
+}
+html::-webkit-scrollbar{
+    display:none;
+}
+
+.グラフ{
+    height:8vw;
+    width:76vw;
+    display: inline-flex;
+}
+.charts{
+    display:flex;
+}
+.グラフ11{
+    height:8vw;
+    width:var(--set1u);
+    background-color:#47e6ffb8;
+    border:none;
+    border-radius:10px;
+}
+.グラフ12{
+    height:8vw;
+    width:var(--set1k);
+    background-color:#5dff57b5;
+    border:none;
+    border-radius:10px;
+}
+.グラフ21{
+    height:8vw;
+    width:var(--set2u);
+    background-color:#47e6ffb8;
+    border:none;
+    border-radius:10px;
+}
+.グラフ22{
+    height:8vw;
+    width:var(--set2k);
+    background-color:#5dff57b5;
+    border:none;
+    border-radius:10px;
+}
+.グラフ31{
+    height:8vw;
+    width:var(--set3u);
+    background-color:#47e6ffb8;
+    border:none;
+    border-radius:10px;
+}
+.グラフ32{
+    height:8vw;
+    width:var(--set3k);
+    background-color:#5dff57b5;
+    border:none;
+    border-radius:10px;
+}
+.グラフ41{
+    height:8vw;
+    width:var(--set4u);
+    background-color:#47e6ffb8;
+    border:none;
+    border-radius:10px;
+}
+.グラフ42{
+    height:8vw;
+    width:var(--set4k);
+    background-color:#5dff57b5;
+    border:none;
+    border-radius:10px;
+}
+.goal{
+    height:8vw;
+    width:6vw;
+    background-color:#eded42b5;
+    border:none;
+    border-radius:5px;
+}
+
+.owari{
+    color:rgb(255, 72, 0);
+}
+.class{
+    height:8vw;
+    width:6.5vw;
+    transform: translateX(2.7vw);
+}
+#class{
+    margin-top:5px;
+    margin-left: 2vw;
+}
+.残り{
+    text-align: center;
+    width:8vw;
+    height:6vw;
+    display:inline-block;
+    position:absolute;
+    right:1vw;
+    border:solid 1px rgb(75, 75, 75);
+    background-color: rgb(92, 126, 89);
+    font:1.5vw "Arial Black","Osaka";
+    color:white;
+    border-radius: 10px;
+    padding:1vw;
+}
+.takasa{
+    display:flex;
+}
+.sasimi{
+    display:block;
+    padding: 5px 0vw;
+    border-bottom: solid 2px rgb(75, 75, 75);
+}
+.nokori{
+    padding:1vw 0vw;
+    border-bottom:0;
+}
+#shinkou{
+    height:8vw;
+    margin: 5px 0px ;
+}
+.tree{
+    margin-top:5px;
+}
+.antenmae{
+    display:none;
+    position: absolute;
+    z-index: 30;
+    height:165px;
+    width:100%;
+    background-color:rgba(0, 0, 0, 0.1);
+    transform:translateY(-5px);
+}
+.ten{
+    margin-left: 5px;
+}
+.deer{
+    appearance:none;
+    width:40px;
+    height:35px;
+    font-size:15px;
+    border:dotted 2px #454545;
+    border-left:solid 2px var(--mordcolor);
+    border-radius: 0px 20px 20px 0px;
+    background-color:var(--mordcolor);
+    padding-left: 10px;
+    transform: translate(0px,15px);
+    color: var(--mordcolor);
+    filter: drop-shadow(1px 2px 1px rgba(0,0,0,0.6));
+    outline:none;
+    opacity: 0.8;
+}
+.mizu{
+    position:relative;
+    width:70px;
+    height:15px;
+    display:none;
+    opacity: 1;
+}
+.a{
+    position: fixed;
+    left:0px;
+    top:400px;
+    pointer-events: var(--click);
+}
+.a::before {
+    content:url(/img/fire.png);
+    display: inline-block;
+    position: absolute;
+    z-index: 100;
+    top:17px;
+    left:5px;
+    pointer-events:none;
+}
+.s{
+    position: fixed;
+    left:0px;
+    top:379px;
+    width:38px;
+    height:31px;
+    border:dotted 2px #454545;
+    border-radius: 0px 20px 20px 0px;
+    border-left: var(--mordcolor2);
+    background-color: var(--mordcolor2);
+    opacity: 0.9;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.6));
+}
+.sp{
+    pointer-events: var(--click);
+}
+.s::before{
+    content:url(/img/clock.png);
+    display: inline-block;
+    position: absolute;
+    z-index: 100;
+    top:2px;
+    left:5px;
+    pointer-events:none;
+}
+.s:active{ opacity:0.8;}
+.saba{
+    color:white;
+    background-color: #565656fe;
+    position:fixed;
+    top:360px;
+    left:20px;
+    opacity:0;
+    visibility:hidden;
+    font-size: 10px;
+    height: 15px;
+    width: 100px;
+    pointer-events: var(--click);
+}
+/*       .sのhover時に.sabaを表示      */
+.sp:hover + .saba{
+    opacity: 0.7;
+    visibility: visible;
+    transition: opacity 0.5s ease 0.8s;
+}
+.frog{
+    border:dashed 2px rgb(200, 200, 200);;
+    border-top: none;
+    transform: translateY(-5px);
+    background-color: rgb(228, 255, 232);
+    border-radius: 0% 0% 0% 3px;
+    border-right:none;
+    width:55px;
+    outline: none;
+}
+.tokei{
+    border:none;
+    border-bottom:dashed 2px rgb(200, 200, 200);
+    transform: translateY(-5px);
+    background-color: rgb(228, 255, 232);
+    width:55px;
+    outline: none;
+}
+.snake{
+    border:dashed 2px rgb(200, 200, 200);
+    border-top: none;
+    transform: translateY(-5px);
+    background-color: rgb(228, 255, 232);
+    border-radius: 0% 0% 3px 0%;
+    border-left: none;
+    width:55px;
+    outline: none;
+}
+.setshita{
+    font-size:2.5vw;
+    border-bottom: dashed 0.4vw red;
+    border-left:solid 0.4vw red;
+}
+.gear{
+    border: solid 0.2vw black;
+    font:1.2vw black;
+    padding:0.05vw;
+    border-radius: 5px;
+    margin-top: 0.03vw;
+    width:3.85vw;
+}
+
+.ging {
+    display:table;
+    font: 1.7vw "Arial Black","Osaka";
+    margin: 10px 0px 0px 5px;
+
+}
+.te{
+    display: table-cell;
+}
+.xt{
+    display: table-cell;
+
+}
+.helpclass{
+    display:none;
+    position: absolute;
+    z-index:51;
+}
+.water{
+    color: #ff831db5;
+    padding:10px 20px;
+    border:solid 4px #ff933ae6;
+    border-radius:40px 0px 0px 40px;
+    position:relative;
+    z-index: 20;
+    margin-left: 30px;
+}
+.clock{
+    color: #72d7c6c0;
+    padding:10px 20px 10px 0px;
+    border:solid 4px  #c9fbff94;
+    border-radius:0px 40px 40px 0px;
+    position:relative;
+    left:-4px;
+    z-index: 1;
+}
+
+.title{
+    font-size:50px;
+    padding:5px;
+    background-image: url('img/wood.png');
+    border-bottom: double 10px rgba(0, 0, 0, 0.423);
+    border-top: double 10px rgba(0, 0, 0, 0.423);
+}
+/* オフにする */
+.on{
+    border:1px;
+    border-radius: 20px 0px 0px 20px;
+    color:rgb(255, 255, 255);
+    background-color:rgb(104, 228, 99);
+    padding: 15px 10px;
+    font-size:40px;
+    box-shadow:0px 7px #51be4e7a;
+    width: 200px;
+    height:100px;
+}
+.on:active{
+    box-shadow: none;
+    transform:translateY(7px);
+}
+.border{
+    border:dashed 2px rgb(200, 200, 200);
+    border-radius:5px;
+    margin:0px 8px;
+    height:2px;
+}
+.b{
+    text-align: center;
+    padding-bottom: 90px;
+    position:relative;
+    width:100%;
+}
+/* オンにする */
+.off{
+    border:2px;
+    border-radius: 20px 0px 0px 20px;
+    color:rgb(255, 255, 255);
+    background-color:rgb(224, 50, 50);
+    padding:15px 10.578px;
+    font-size:40px;
+    box-shadow:0px 7px #be4e4e7a;
+    width: 200px;
+    height:100px;
+}
+.off:active{
+    box-shadow: none;
+    transform:translateY(7px);
+}
+#time{
+    margin-top:60px;
+    text-align: center;
+}
+#timer{
+    font-size: 90px;
+    border:solid 2px;
+    border-radius: 10px;
+    padding:5px;
+    margin:5px;
+}
+/* buttonの大きさ118(width) */
+/* stopの大きさは７７ */
+#clear{
+    display:inline ;
+    border:2px;
+    border-radius:0px 20px 20px 0px;
+    color:rgb(255, 255, 255);
+    background-color:rgb(131, 128, 128);
+    padding:15px 10px;
+    font-size:40px;
+    box-shadow:0px 7px rgb(192, 187, 187);
+    width: 200px;
+    height:100px;
+}
+#clear:active{
+    box-shadow: none;
+    transform:translateY(7px);
+    position:relative;
+}
+#kaisuu{
+    text-align:center;
+    height:160px;
+}
+#kazu{
+    border:none 1px;
+    padding:5px 8px;
+    background-color: rgba(218, 218, 218, 0.548);
+    font-size: 100px;
+    border-radius:15px;
+}
+.kuro{
+    color:rgb(21, 255, 0);
+}
+.ki{
+margin:0px;
+background-color: rgb(228, 255, 232);
+
+}
+#p{
+    transform:none;
+}
+#hatena{
+    border:solid 2px rgb(180, 180, 180);
+    border-radius:100% ;
+    padding: 2px 5px;
+    background-color:rgb(152, 152, 152);
+    font-size: 15px;
+    margin: 3px 0px 0px 3px;
+    color: rgb(255, 255, 255);
+    cursor:default;
+    position:relative;
+    z-index: 50;
+}
+#hatena:active{
+
+    background-color:rgb(162, 162, 162);
+    border:solid 2px rgb(190, 190, 190);
+}
+p{
+    margin:1px;
+}
+#ヘルプ{
+    border:solid 2px rgb(104, 104, 104);
+    border-radius: 5px 5px 5px 5px;
+    margin-right: 3px;
+    background-color: rgb(152, 152, 152);;
+    color: rgb(233, 230, 230);
+    position:relative;
+    z-index: 50;
+}
+.Help{
+    animation-name: fadein;
+    animation-fill-mode:forwards;
+    animation-duration:0.3s;
+    animation-timing-function:ease;
+    animation-direction:normal;
+
+    display:block;
+    border:solid 2px rgb(190, 190, 190);
+    border-radius:5px;
+    background-color:#bebebed4;
+    font:10px rgb(60, 60, 60);
+    margin: 0px 150px 30px 25px;
+}
+@keyframes fadein{
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.antengo{
+    display:block;
+}   
+
+
+.pikuto{
+    animation:ugokasu var(--speed) linear 0s forwards;
+    animation-play-state:var(--animestop);
+}
+@keyframes ugokasu{
+    0%{transform: translateX(3.75vw);
+
+    }99%{
+        transform:translateX(73.75vw);
+    }100%{
+        transform:translateX(76.5vw);
+    }
+}
+/*
+メモ欄                           
+                                
+queryselectorallで下記のclassを付与
+　　　　　　　　　↓
+classをremoveすることもできるため特定のclass
+を付与すればSETの表示or非表示を切り替えられる
+
+*/
+.none{/*下記class付与前の標準時のnone表示*/
+    display:none;
+}
+.op2{
+    display:block;
+}
+.op2none{
+    display:none;
+}
+.op3{
+    display:block;
+}
+.op3none{
+    display:none;
+}
+.op4{
+    display:block;
+}
+.op4none{
+    display:none;
+}
+.op5{
+    display:block;
+}
+.op5none{
+    display:none;
+}
+
+
+/*         cssアニメーションの足作成(仮）       
+
+.右脚{
+    width:2.5vw;
+    height:1.3vw;
+    border:none;
+    border-radius: 7px;
+    background-color: black;
+    display:inline-block;
+    position: relative;
+    top:-35px;
+    margin-bottom: 1vw;
+    left:8.2vw;
+    transform:rotate(-65deg)
+}
+*/
